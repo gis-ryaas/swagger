@@ -196,7 +196,7 @@ components:
           example: Selamat Datang
         token:
           type: string
-          example: Password Salah
+          example: tokenstring
   requestBodies:
     AuthReq:
       description: Request Authentication
