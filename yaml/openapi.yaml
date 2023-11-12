@@ -14,7 +14,7 @@ externalDocs:
   description: Swagger
   url: https://gis-ryaas.github.io/swaggergis/
 servers:
-  - url: https://asia-southeast2-noted-slice-401902.cloudfunctions.net
+  - url: https://us-central1-noted-slice-401902.cloudfunctions.net/
 tags:
   - name: auth
     description: Authentikasi
@@ -53,7 +53,7 @@ paths:
                 $ref: "#/components/schemas/Response"
         "405":
           description: Invalid input
-  /gis-log:
+  /gis5:
     post:
       tags:
         - auth
@@ -74,7 +74,7 @@ paths:
                 $ref: "#/components/schemas/AuthResponse"
         "405":
           description: Invalid input
-  /gis4:
+  /gis5baru:
     put:
       tags:
         - data
@@ -178,13 +178,13 @@ components:
       properties:
         type:
           type: string
-          example: type
+          example: polygon
         name:
           type: string
-          example: nama
+          example: ryaas
         volume:
           type: string
-          example: volume
+          example: "1"
     AuthResponse:
       type: object
       properties:
