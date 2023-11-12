@@ -169,10 +169,10 @@ components:
       properties:
         username:
           type: string
-          example: ryaas123
+          example: iyas
         password:
           type: string
-          example: ryaaspo123
+          example: iyaslodons
     bodycord:
       type: object
       properties:
@@ -196,7 +196,7 @@ components:
           example: Selamat Datang
         token:
           type: string
-          example: ryaas
+          example: iyas
   requestBodies:
     AuthReq:
       description: Request Authentication
