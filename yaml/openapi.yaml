@@ -3,16 +3,16 @@ info:
   title: Dokumen API Cloud Function GIS- OpenAPI 3.0
   description: >-
     Dokumentasi API untuk Matakuliah GIS
-  termsOfService: https://gis-ryaas.github.io/swaggergis/
+  termsOfService: https://github.com/gis-ryaas
   contact:
     email: ryaasishlah123@gmail.com
   license:
-    name: gcfbackendyas Package
+    name: GCF Package
     url: https://pkg.go.dev/github.com/gis-ryaas/gcfbackendyas
-  version: 0.0.2
+  version: 1.0.11
 externalDocs:
   description: Swagger
-  url: https://gis-ryaas.github.io
+  url: https://gis-ryaas.github.io/swaggergis/
 servers:
   - url: https://asia-southeast2-noted-slice-401902.cloudfunctions.net
 tags:
@@ -20,19 +20,19 @@ tags:
     description: Authentikasi
     externalDocs:
       description: Deskripsi dan Kode Program
-      url: github.com/gis-ryaas/gcfbackendyas
+      url: https://pkg.go.dev/github.com/gis-ryaas/gcfbackendyas
   - name: register
     description: Register Account
     externalDocs:
       description: Deskripsi dan Kode Program
-      url: github.com/gis-ryaas/gcfbackendyas
+      url: https://pkg.go.dev/github.com/gis-ryaas/gcfbackendyas
   - name: data
     description: Data Untuk akses GIS
     externalDocs:
       description: Deskripsi dan Kode Program
-      url: github.com/gis-ryaas/gcfbackendyas
+      url: https://pkg.go.dev/github.com/gis-ryaas/gcfbackendyas
 paths:
-  /RegisterGeo:
+  /RegisterGis:
     post:
       tags:
         - register
@@ -43,17 +43,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/user'
+              $ref: "#/components/schemas/user"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
-        '405':
+                $ref: "#/components/schemas/Response"
+        "405":
           description: Invalid input
-  /LoginGeo:
+  /login-gis:
     post:
       tags:
         - auth
@@ -64,17 +64,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Auth'
+              $ref: "#/components/schemas/Auth"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '405':
+                $ref: "#/components/schemas/AuthResponse"
+        "405":
           description: Invalid input
-  /Updategeo:
+  /UpdateGeo:
     put:
       tags:
         - data
@@ -85,43 +85,43 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/bodycord'
+              $ref: "#/components/schemas/bodycord"
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
-        '405':
-          description: Invalid input          
+                $ref: "#/components/schemas/Response"
+        "405":
+          description: Invalid input
       security:
         - Login:
-          - write:apiKey
-          - read:apiKey
+            - write:apiKey
+            - read:apiKey
 
-  /GetAllgeojson:
+  /GetAllGeo:
     get:
       tags:
         - data
       summary: Get Data Geojson
-      description: Header auth 
+      description: Header auth
       operationId: GetdataGeojson
       responses:
-        '200':
+        "200":
           description: successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/responseUser'
-        '400':
+                  $ref: "#/components/schemas/responseUser"
+        "400":
           description: Invalid status value
       security:
         - Login:
-          - write:apiKey
-          - read:apiKey
+            - write:apiKey
+            - read:apiKey
 
 components:
   schemas:
@@ -130,10 +130,10 @@ components:
       properties:
         username:
           type: string
-          example : iyas
+          example: ryaas
         password:
           type: string
-          example: iyaslodons
+          example: ryaas
     Response:
       type: object
       properties:
@@ -157,7 +157,7 @@ components:
           properties:
             username:
               type: string
-              example: iyas
+              example: ryaas
             password:
               type: string
               example: hashed password
@@ -169,10 +169,10 @@ components:
       properties:
         username:
           type: string
-          example: iyas
+          example: ryaas
         password:
           type: string
-          example: iyaslodons
+          example: ryaas
     bodycord:
       type: object
       properties:
@@ -181,7 +181,7 @@ components:
           example: polygon
         name:
           type: string
-          example: lodons
+          example: ryaas
         volume:
           type: string
           example: "1"
@@ -196,14 +196,14 @@ components:
           example: Selamat Datang
         token:
           type: string
-          example: tokenstring
+          example: ryaas
   requestBodies:
     AuthReq:
       description: Request Authentication
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Auth'
+            $ref: "#/components/schemas/Auth"
     UserArray:
       description: List of user object
       content:
@@ -211,11 +211,9 @@ components:
           schema:
             type: array
             items:
-              $ref: '#/components/schemas/AuthResponse'
+              $ref: "#/components/schemas/AuthResponse"
   securitySchemes:
     Login:
       type: apiKey
       name: Login
       in: header
-
-      
