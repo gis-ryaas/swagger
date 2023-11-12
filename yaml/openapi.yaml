@@ -181,7 +181,7 @@ components:
           example: polygon
         name:
           type: string
-          example: ryaas
+          example: iyas
         volume:
           type: string
           example: "1"
