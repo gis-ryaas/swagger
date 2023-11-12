@@ -74,7 +74,7 @@ paths:
                 $ref: "#/components/schemas/AuthResponse"
         "405":
           description: Invalid input
-  /gis5baru:
+  /gis4:
     put:
       tags:
         - data
