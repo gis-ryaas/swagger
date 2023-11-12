@@ -53,7 +53,7 @@ paths:
                 $ref: "#/components/schemas/Response"
         "405":
           description: Invalid input
-  /gis5:
+  /gis-log:
     post:
       tags:
         - auth
@@ -130,10 +130,10 @@ components:
       properties:
         username:
           type: string
-          example: ryaas
+          example: iyas
         password:
           type: string
-          example: ryaas
+          example: iyaslodons
     Response:
       type: object
       properties:
@@ -157,7 +157,7 @@ components:
           properties:
             username:
               type: string
-              example: ryaas
+              example: iyas
             password:
               type: string
               example: hashed password
