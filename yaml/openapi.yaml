@@ -32,7 +32,7 @@ tags:
       description: Deskripsi dan Kode Program
       url: https://pkg.go.dev/github.com/gis-ryaas/gcfbackendyas
 paths:
-  /RegisterGis:
+  /gisregister:
     post:
       tags:
         - register
