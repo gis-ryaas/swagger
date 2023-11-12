@@ -178,13 +178,13 @@ components:
       properties:
         type:
           type: string
-          example: polygon
+          example: type
         name:
           type: string
-          example: ryaas
+          example: nama
         volume:
           type: string
-          example: "1"
+          example: volume
     AuthResponse:
       type: object
       properties:
