@@ -14,7 +14,7 @@ externalDocs:
   description: Swagger
   url: https://gis-ryaas.github.io/swaggergis/
 servers:
-  - url: https://us-central1-noted-slice-401902.cloudfunctions.net
+  - url: https://us-central1-noted-slice-401902.cloudfunctions.net/
 tags:
   - name: auth
     description: Authentikasi
@@ -53,7 +53,7 @@ paths:
                 $ref: "#/components/schemas/Response"
         "405":
           description: Invalid input
-  /gislogin:
+  /gis5:
     post:
       tags:
         - auth
