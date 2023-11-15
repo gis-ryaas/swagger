@@ -100,7 +100,7 @@ paths:
             - write:apiKey
             - read:apiKey
 
-  /project-gis:
+  /getall-geojson:
     get:
       tags:
         - data
